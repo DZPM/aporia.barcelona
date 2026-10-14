@@ -1,0 +1,26 @@
+# Dependabot: the Python toolchain (pyproject.toml and uv.lock) and the pinned actions, once a week, one pull request
+# for each ecosystem. The actions are pinned by commit, and Dependabot updates the hash and the version comment together.
+# A version waits 7 days after its release before Dependabot proposes it (cooldown): a hijacked release is usually
+# found and pulled in that time. Security updates do not wait.
+version: 2
+updates:
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      python:
+        patterns: ["*"]
+    ignore:
+      - dependency-name: ruff   # a lint tool with a release almost every week; pinned in pyproject.toml, updated by hand
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
