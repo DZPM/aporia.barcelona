@@ -9,7 +9,7 @@ Everything that serves the site and is not in this repository, written down so i
 | Registrar | Namecheap, account of David Arcos. Registered 2026-10-14 |
 | Nameservers | Namecheap BasicDNS (`dns1.registrar-servers.com`, `dns2.registrar-servers.com`) |
 | Auto renew, registrar lock | to confirm |
-| Mail | none: the domain has no MX and receives no mail |
+| Mail | Namecheap email forwarding: MX `eforward1` to `eforward5.registrar-servers.com`, and TXT `v=spf1 include:spf.efwd.registrar-servers.com ~all` at `@`. Which addresses forward, and to whom, is to decide |
 
 ## DNS records at Namecheap
 
@@ -20,12 +20,12 @@ Everything that serves the site and is not in this repository, written down so i
 | `www` | CNAME | `dzpm.github.io.` |
 | `_github-pages-challenge-dzpm` | TXT | the value GitHub shows when the domain is added to the account's verified domains (account Settings, Pages). Keep it: with the domain verified, no other GitHub account can claim `aporia.barcelona` or a subdomain for its own Pages site |
 
-Nothing else. The parking records that Namecheap creates with a new domain are removed.
+Plus the mail records above. Nothing else. The parking records that Namecheap creates with a new domain are removed.
 
 ## GitHub Pages
 
 - Repository `DZPM/aporia.barcelona`, public. Source: GitHub Actions, the workflow in `.github/workflows/deploy.yml`, from `main`.
-- Custom domain `aporia.barcelona`, set in the repository settings (Settings, Pages). With a deploy from Actions, GitHub ignores a `CNAME` file, so the repository has none.
+- Custom domain `aporia.barcelona` (the apex is the canonical address; GitHub redirects `www` to it), set in the repository settings (Settings, Pages). The domain is verified for the account (`protected_domain_state: verified`, 2026-10-14). The certificate must cover `www` too: GitHub asks for it only if the `www` record exists when the custom domain is saved, so after a change to `www`, remove the custom domain and save it again. With a deploy from Actions, GitHub ignores a `CNAME` file, so the repository has none.
 - Enforce HTTPS: on, once GitHub has issued the certificate.
 
 ## Check
