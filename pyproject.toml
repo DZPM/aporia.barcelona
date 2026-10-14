@@ -1,0 +1,26 @@
+# The site's Python toolchain. It is not a package: uv only keeps the environment (uv sync) and the lock.
+# uv.lock pins every dependency, direct or not, with the hash of each file; CI installs it with --locked.
+[project]
+name = "aporia-barcelona"
+version = "0"
+requires-python = ">=3.14"
+dependencies = [
+    "pelican==4.12.0",
+    "markdown==3.11",
+]
+
+[dependency-groups]
+dev = [
+    "ruff==0.17.0",   # make lint and CI; Dependabot leaves it alone (.github/dependabot.yml), update it by hand
+]
+
+[tool.uv]
+package = false
+required-version = ">=0.12"   # CI installs the newest uv that matches
+
+[tool.ruff]
+target-version = "py314"
+include = ["pelicanconf.py", "publishconf.py"]
+
+[tool.ruff.lint]
+select = ["F", "B"]   # pyflakes and bugbear: likely bugs, not style
