@@ -33,6 +33,7 @@ Slug: NN-slug
 Date: 2026-11-26 19:00
 Hora: 19:00
 Lugar: the place
+Tema: the topic
 Summary: One sentence; search engines show it.
 
 The question of the meetup, in one paragraph.

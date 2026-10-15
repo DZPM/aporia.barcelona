@@ -58,6 +58,7 @@ AUTHOR_FEED_RSS = None
 RELATIVE_URLS = True
 
 # Dates in Spanish, without a locale: the CI runner has only the C locale
+DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 MENU = [("Encuentros", "/#encuentros"), ("Sobre nosotros", "/#nosotros")]
