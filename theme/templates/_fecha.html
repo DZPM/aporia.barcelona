@@ -1,0 +1,1 @@
+{% macro fecha(d) %}<time datetime="{{ d.strftime('%Y-%m-%d') }}">{{ d.day }} de {{ MESES[d.month - 1] }} de {{ d.year }}</time>{% endmacro %}

@@ -1,0 +1,9 @@
+{% macro persona(p) %}
+<article class="persona" id="{{ p.slug }}">
+  {% if p.foto %}{% if p.web %}<a class="foto" href="{{ p.web }}" rel="noopener" tabindex="-1" aria-hidden="true">{% else %}<span class="foto">{% endif %}<img src="{{ SITEURL }}/{{ p.foto }}" alt="" width="160" height="160" loading="lazy">{% if p.web %}</a>{% else %}</span>{% endif %}{% endif %}
+  <h3>{% if p.web %}<a href="{{ p.web }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+  {% set links = [] %}{% for key, label, icon in PERSONA_LINKS if p[key] %}{% set _ = links.append((p[key], label, icon)) %}{% endfor %}
+  {% if links %}<ul class="links">{% for url, label, icon in links %}<li><a href="{{ url }}" rel="noopener" aria-label="{{ label }} de {{ p.title }}" title="{{ label }} de {{ p.title }}">{% if icon %}<span aria-hidden="true">{% include "icons/" ~ icon ~ ".svg" %}</span>{% else %}{{ label }}{% endif %}</a></li>{% endfor %}</ul>{% endif %}
+  {{ p.content }}
+</article>
+{% endmacro %}

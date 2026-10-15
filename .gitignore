@@ -1,5 +1,6 @@
 # Build
 output/
+output-publish/
 .venv/
 __pycache__/
 *.pyc

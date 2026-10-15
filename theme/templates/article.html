@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "_fecha.html" import fecha with context %}
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{% if article.summary %}<meta name="description" content="{{ article.summary|striptags|trim }}">{% endif %}{% endblock %}
+{% block content %}
+<article>
+<h1>{{ article.title }}</h1>
+<ul class="ficha">
+  <li>Fecha: {{ fecha(article.date) }}{% if article.hora %}, {{ article.hora }}{% endif %}</li>
+  {% if article.lugar %}<li>Lugar: {{ article.lugar }}</li>{% endif %}
+</ul>
+{{ article.content }}
+</article>
+{% endblock %}

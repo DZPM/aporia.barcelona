@@ -4,8 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  {% block description %}{% endblock %}
+  <link rel="icon" href="{{ SITEURL }}/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ SITEURL }}/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="{{ SITEURL }}/apple-touch-icon.png">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
 </head>
 <body>
+<header>
+  <div class="brand"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{% block brand %}<a class="site" href="{{ SITEURL }}/">{{ SITENAME }}</a>{% endblock %}</div>
+  <nav>{% for name, link in MENU %}<a href="{{ SITEURL }}{{ link }}">{{ name }}</a>{% endfor %}</nav>
+</header>
+<main>
 {% block content %}{% endblock %}
+</main>
+<footer>
+  <p>Aporia Barcelona. Textos bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a>.</p>
+</footer>
 </body>
 </html>

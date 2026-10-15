@@ -1,0 +1,53 @@
+:root {
+  --fg: #1a1a1a;
+  --muted: #666;
+  --bg: #fdfcf9;
+  --link: #8a3b12;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e6e1;
+    --muted: #9a978f;
+    --bg: #161514;
+    --link: #f0a070;
+  }
+}
+html { scrollbar-gutter: stable; }   /* the header does not move between a page with a scrollbar and one without */
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  font: 1.0625rem/1.6 system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+a { color: var(--link); }
+header { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.brand .logo { display: block; }
+header .site { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-decoration: none; color: var(--fg); }   /* the same on every page: a link on most, the page's h1 on the home page */
+header nav a { margin-left: 1rem; }
+h1 { line-height: 1.2; }
+main h1 { font-size: 1.6rem; }   /* a page's title stays under the name in the header */
+.eventos, .ficha { padding-left: 1.2rem; }
+footer { margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+.personas { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.5rem; margin: 1.25rem 0; }   /* three in a row on a wide screen, one under the other on a phone */
+.persona { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.persona .foto { display: block; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; box-shadow: 0 0 0 1px color-mix(in oklab, var(--fg) 15%, transparent); }   /* the round frame: it clips the photo when it comes closer */
+.persona .foto img { display: block; object-fit: cover; transition: transform 0.2s linear; }
+@media (prefers-reduced-motion: no-preference) {   /* the photo comes closer inside its frame, as on davidarcos.net; no motion when the reader asks for none */
+  .persona:hover .foto img, .persona:focus-within .foto img { transform: scale(1.2); }
+}
+.persona h3 { margin: 0; font-size: 1.1rem; }
+.persona h3 a { color: var(--fg); text-decoration: none; }
+.persona h3 a:hover, .persona h3 a:focus-visible { color: var(--link); text-decoration: underline; }
+.persona .links { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem; margin: 0.15rem 0 0; padding: 0; }
+.persona .links a { display: inline-flex; padding: 0.4rem; color: var(--muted); border-radius: 6px; }
+.persona .links a:hover, .persona .links a:focus-visible { color: var(--link); }
+.persona .links svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+.persona p { margin: 0.5rem 0 0; font-size: 0.95rem; }
+.definicion { margin: 1.5rem 0 2rem; padding: 0.25rem 0 0.25rem 1.25rem; border-left: 3px solid var(--link); font-family: Georgia, "Times New Roman", serif; }
+.definicion p, .definicion ol { margin: 0.4rem 0; }
+.definicion p:first-child strong { font-size: 1.5rem; }
+.definicion ol { padding-left: 1.4rem; }

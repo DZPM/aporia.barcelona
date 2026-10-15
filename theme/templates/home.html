@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% from "_fecha.html" import fecha with context %}
+{% from "_persona.html" import persona with context %}
+{% block brand %}<h1 class="site">{{ SITENAME }}</h1>{% endblock %}   {# the home page: the name in the header is its title, not a link to itself #}
+{% block content %}
+{{ page.content }}
+
+<section id="encuentros">
+<h2>Encuentros</h2>
+{% if articles %}
+<ul class="eventos">
+{% for a in articles %}
+  <li>{{ fecha(a.date) }}: <a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>El primer encuentro, pronto.</p>
+{% endif %}
+</section>
+
+{% set personas = pages|selectattr("rol", "defined")|sort(attribute="orden")|list %}
+<section id="nosotros">
+<h2>Sobre nosotros</h2>
+<div class="personas">{% for p in personas if p.rol == "organizador" %}{{ persona(p) }}{% endfor %}</div>
+</section>
+
+{% set invitados = personas|selectattr("rol", "equalto", "invitado")|list %}
+{% if invitados %}
+<section id="invitados">
+<h2>Invitados</h2>
+<div class="personas">{% for p in invitados %}{{ persona(p) }}{% endfor %}</div>
+</section>
+{% endif %}
+{% endblock %}
