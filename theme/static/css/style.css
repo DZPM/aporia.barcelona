@@ -56,7 +56,15 @@ header.evento .cuando { margin: 0; color: var(--muted); }
 .link-icon svg { display: block; width: 1em; height: 1em; fill: currentColor; }
 .icon-link:hover .link-icon, .icon-link:focus-visible .link-icon { color: var(--link); }
 a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }   /* the same ring on every link, in both themes */
-footer { margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
+/* the colophon: the licence on one side and the site's own accounts on the other, as the name and the menu in the header; one under the other on a phone.
+   Small and muted, links included: the accent colour comes with the pointer or the focus */
+footer { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; align-items: center; justify-content: space-between; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid color-mix(in oklab, var(--fg) 15%, transparent); font-size: 0.875rem; color: var(--muted); }
+footer p { margin: 0; }
+footer a { color: inherit; }
+footer a:hover, footer a:focus-visible { color: var(--link); }
+footer .site-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0; padding: 0; }
+footer .icon-link { padding: 0.25rem 0; }
+footer .link-icon { color: inherit; }
 .personas { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.5rem; margin: 1.25rem 0; }   /* three in a row on a wide screen, one under the other on a phone */
 .persona { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .persona .foto { display: block; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; box-shadow: 0 0 0 1px color-mix(in oklab, var(--fg) 15%, transparent); }   /* the round frame: it clips the photo when it comes closer */

@@ -59,6 +59,9 @@ RELATIVE_URLS = True
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
+# The site's own accounts, shown in the footer of every page: URL, text, and icon in theme/templates/icons/
+SITE_LINKS = [("https://x.com/aporiabarcelona", "@aporiabarcelona", "x"), ("https://luma.com/aporia.barcelona", "aporia.barcelona", "luma")]   # the Luma calendar lists no private event and no guest
+
 MENU = [("Eventos", "/#eventos"), ("Sobre nosotros", "/#nosotros")]
 
 # The links a Person can have, shown as icons under the name, in this order: frontmatter key, label, and icon in

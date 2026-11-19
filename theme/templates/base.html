@@ -20,7 +20,8 @@
 {% block content %}{% endblock %}
 </main>
 <footer>
-  <p>Aporia Barcelona. Textos bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC BY-SA 4.0</a>.</p>
+  <p>Aporia Barcelona. Textos bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" rel="license noopener">CC BY-SA 4.0</a>.</p>
+  <ul class="site-links">{% for url, text, icon in SITE_LINKS %}<li><a class="icon-link" href="{{ url }}" rel="me noopener"><span class="link-icon" aria-hidden="true">{% include "icons/" ~ icon ~ ".svg" %}</span><span class="link-text">{{ text }}</span></a></li>{% endfor %}</ul>
 </footer>
 </body>
 </html>
