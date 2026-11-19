@@ -30,6 +30,7 @@ EXTRA_PATH_METADATA = {   # the icons at the root, where browsers look for them;
     "extra/favicon.svg": {"path": "favicon.svg"},
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/apple-touch-icon.png": {"path": "apple-touch-icon.png"},
+    "extra/og.png": {"path": "og.png"},   # the share card for X, LinkedIn, and WhatsApp; its source is tools/og-card.html
 }
 
 # The only direct template is the sitemap: the home page is content/pages/index.md. Categories, tags, authors, and
@@ -60,6 +61,9 @@ DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "doming
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 # The site's own accounts, shown in the footer of every page: URL, text, and icon in theme/templates/icons/
+X_HANDLE = "@aporiabarcelona"   # twitter:site on every page
+OG_IMAGE_ALT = "Aporia Barcelona: la definición de aporía, del griego, dificultad, perplejidad, falta de salida"
+
 SITE_LINKS = [("https://x.com/aporiabarcelona", "@aporiabarcelona", "x"), ("https://luma.com/aporia.barcelona", "aporia.barcelona", "luma")]   # the Luma calendar lists no private event and no guest
 
 MENU = [("Eventos", "/#eventos"), ("Sobre nosotros", "/#nosotros")]

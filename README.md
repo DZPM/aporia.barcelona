@@ -21,7 +21,7 @@ The content is Markdown in `content/`, in Spanish:
 - `content/eventos/NN-slug.md`: one file per event, at `/eventos/NN-slug/` (docs/adr/0002).
 - `content/personas/<slug>.md`: one file per person, organiser or guest, shown inside the home page (docs/adr/0003). Photos go in `content/images/personas/`.
 
-The HTML is in `theme/templates/`, the stylesheet in `theme/static/css/style.css`, and the icons in `content/extra/`.
+The HTML is in `theme/templates/`, the stylesheet in `theme/static/css/style.css`, and the icons in `content/extra/`. Every page has the tags that X, LinkedIn, and WhatsApp read for a link preview (`theme/templates/_share.html`); an event uses its title, `Tema`, and `Summary`. The preview image is `content/extra/og.png`, made from `tools/og-card.html`.
 
 ## Add an event
 

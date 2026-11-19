@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
   {% block description %}{% endblock %}
+  {% block share %}
+  <link rel="canonical" href="{{ SITEURL }}/">
+  <meta name="description" content="{{ SITESUBTITLE }}">
+  {% set share_title = SITENAME %}{% set share_description = SITESUBTITLE %}{% set share_url = SITEURL ~ "/" %}{% set share_type = "website" %}
+  {% include "_share.html" %}
+  {% endblock %}
   <link rel="icon" href="{{ SITEURL }}/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="{{ SITEURL }}/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="{{ SITEURL }}/apple-touch-icon.png">

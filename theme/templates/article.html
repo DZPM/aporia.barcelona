@@ -2,6 +2,11 @@
 {% from "_fecha.html" import fecha with context %}
 {% block title %}{{ article.title }}{% if article.tema %}: {{ article.tema }}{% endif %} | {{ SITENAME }}{% endblock %}
 {% block description %}{% if article.summary %}<meta name="description" content="{{ article.summary|striptags|trim }}">{% endif %}{% endblock %}
+{% block share %}
+  <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+  {% set share_title = article.title ~ (": " ~ article.tema if article.tema else "") %}{% set share_description = article.summary or SITESUBTITLE %}{% set share_url = SITEURL ~ "/" ~ article.url %}{% set share_type = "article" %}
+  {% include "_share.html" %}
+{% endblock %}
 {% block content %}
 <article>
 <header class="evento">

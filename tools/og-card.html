@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Aporia Barcelona: share card</title>
+<!-- The source of content/extra/og.png, the image that X, LinkedIn, and WhatsApp show for a link to the site.
+     To make it again: open this file in a browser at 1200 x 630 and save a screenshot as content/extra/og.png
+     (for example: chromium --headless --window-size=1200,630 --screenshot=og.png tools/og-card.html).
+     Colours and type are the dark theme of theme/static/css/style.css; the definition is the one on the home page. -->
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #161514; color: #e8e6e1; }
+  body { box-sizing: border-box; padding: 64px 88px; display: flex; flex-direction: column; justify-content: space-between; font-family: system-ui, sans-serif; }
+  .brand { display: flex; align-items: center; gap: 22px; font-size: 52px; font-weight: 700; letter-spacing: -0.02em; }
+  .brand svg { display: block; }
+  .definicion { border-left: 5px solid #f0a070; padding: 4px 0 4px 32px; font-family: Georgia, "Times New Roman", serif; font-size: 27px; line-height: 1.4; }
+  .definicion p, .definicion ol { margin: 8px 0; }
+  .definicion .lema { font-size: 46px; font-weight: 700; margin-bottom: 14px; }
+  .definicion ol { padding-left: 34px; }
+  .url { align-self: flex-end; font-size: 26px; color: #9a978f; }
+</style>
+</head>
+<body>
+  <div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="72" height="72"><rect width="72" height="72" rx="14" fill="#8a3b12"/><text x="32" y="43" text-anchor="middle" font-family="DejaVu Sans, Verdana, Arial, sans-serif" font-weight="700" font-size="29" letter-spacing="-1" fill="#fdfcf9">AB</text></svg><span>Aporia Barcelona</span></div>
+  <div class="definicion">
+    <p class="lema">aporía</p>
+    <p>Del gr. ἀπορία (aporía), ‘dificultad’, ‘perplejidad’, ‘falta de salida’.</p>
+    <p><em>f. Filos.</em></p>
+    <ol>
+      <li>Dificultad lógica o contradicción aparentemente irresoluble que surge al examinar una cuestión mediante el razonamiento.</li>
+      <li>Estado de incertidumbre o perplejidad intelectual al reconocer que las respuestas disponibles resultan insuficientes o contradictorias.</li>
+    </ol>
+  </div>
+  <div class="url">aporia.barcelona</div>
+</body>
+</html>
