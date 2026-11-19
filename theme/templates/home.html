@@ -5,16 +5,16 @@
 {% block content %}
 {{ page.content }}
 
-<section id="encuentros">
-<h2>Encuentros</h2>
+<section id="eventos">
+<h2>Eventos</h2>
 {% if articles %}
 <ul class="eventos">
 {% for a in articles %}
-  <li>{{ fecha(a.date) }}: <a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}</a></li>
+  <li>{{ fecha(a.date) }}: <a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}{% if a.tema %}: {{ a.tema }}{% endif %}</a></li>
 {% endfor %}
 </ul>
 {% else %}
-<p>El primer encuentro, pronto.</p>
+<p>El primer evento, pronto.</p>
 {% endif %}
 </section>
 

@@ -32,14 +32,16 @@ Title: Aporia #NN: the title of the meetup
 Slug: NN-slug
 Date: 2026-11-26 19:00
 Hora: 19:00
-Lugar: the place
 Tema: the topic
+Autor: who wrote the posts below, if any
+LinkedIn: a post about the meetup, if any
+X: a post about the meetup, if any
 Summary: One sentence; search engines show it.
 
 The question of the meetup, in one paragraph.
 ```
 
-`Slug` is the file name without `.md`. `Date` is the day and time of the meetup. After the meetup, add what was said, without the names of attendees unless they agree. Look at it with `make serve` before you push: a push to `main` publishes it.
+`Slug` is the file name without `.md`. `Tema` goes in the title of the event page, after the number. `LinkedIn` and `X` are posts about the meetup; they show at the end of the page under "Enlaces", each with its icon and a text such as "Ubaldo en LinkedIn" (the name comes from `Autor`). There is no place field: the place is private, and only the guests get it. `Date` is the day and time of the meetup. After the meetup, add what was said, without the names of attendees unless they agree. Look at it with `make serve` before you push: a push to `main` publishes it.
 
 ## Add a person
 

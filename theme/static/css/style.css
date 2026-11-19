@@ -28,9 +28,34 @@ header { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center
 .brand .logo { display: block; }
 header .site { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-decoration: none; color: var(--fg); }   /* the same on every page: a link on most, the page's h1 on the home page */
 header nav a { margin-left: 1rem; }
+header .lema { flex-basis: 100%; margin: 0.25rem 0 0; font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--muted); }   /* the site's description, as a quote under the name, on every page */
+header .lema p { margin: 0; }
 h1 { line-height: 1.2; }
-main h1 { font-size: 1.6rem; }   /* a page's title stays under the name in the header */
-.eventos, .ficha { padding-left: 1.2rem; }
+main h1 { font-size: 1.6rem; }   /* header.evento h1 is larger: the topic is the event's title */   /* a page's title stays under the name in the header */
+.eventos { padding-left: 1.2rem; }
+/* an event page: the number and the topic as the title, the date under it */
+header.evento { display: block; margin: 0 0 2rem; }
+header.evento h1 { margin: 0 0 0.6rem; font-size: 2rem; }
+header.evento .numero { color: var(--link); }   /* the number in the accent colour, the topic in the text colour */
+header.evento .cuando { margin: 0; color: var(--muted); }
+.cronica > p:first-child { font-size: 1.15rem; }   /* the opening line of the recap */
+.cronica ul { padding-left: 1.2rem; }
+.cronica li { margin: 0.4rem 0; }
+.cronica li::marker { color: var(--link); }
+.cronica .enlaces { margin-top: 2.5rem; }
+.cronica .enlaces h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+/* bullets, as every list on the site, but drawn here: a row is a bullet, the mark, and the text, centred on one line, and a list marker follows the baseline */
+.cronica .enlaces ul { list-style: none; margin: 0; padding: 0; }
+.cronica .enlaces li { display: flex; align-items: center; margin: 0.35rem 0; }
+.cronica .enlaces li::before { content: ""; flex: none; width: 0.35em; height: 0.35em; margin: 0 0.52rem 0 0.3rem; border-radius: 50%; background: var(--link); }
+/* a link to an account or a post on a network: the network's mark, then the text. The mark is in a box of its own width, so the texts of a list start
+   at the same place, and it is outside the underline: only the text is underlined. The mark takes the accent colour with the pointer or the focus */
+.icon-link { display: inline-flex; align-items: center; gap: 0.5em; text-decoration: none; }
+.icon-link .link-text { text-decoration: underline; text-underline-offset: 0.18em; }
+.link-icon { display: inline-flex; flex: none; justify-content: center; width: 1.15em; color: var(--muted); }
+.link-icon svg { display: block; width: 1em; height: 1em; fill: currentColor; }
+.icon-link:hover .link-icon, .icon-link:focus-visible .link-icon { color: var(--link); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }   /* the same ring on every link, in both themes */
 footer { margin-top: 3rem; font-size: 0.875rem; color: var(--muted); }
 .personas { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.5rem; margin: 1.25rem 0; }   /* three in a row on a wide screen, one under the other on a phone */
 .persona { display: flex; flex-direction: column; align-items: center; text-align: center; }

@@ -2,6 +2,7 @@
 
 AUTHOR = "Aporia Barcelona"
 SITENAME = "Aporia Barcelona"
+SITESUBTITLE = "Un simposio relajado, privado, y de aforo reducido que sirve para conversar y compartir con gente interesante sobre el impacto de la IA en nuestras vidas."   # shown as a quote under the name, in the header of every page
 SITEURL = ""
 DEFAULT_LANG = "es"
 TIMEZONE = "Europe/Madrid"
@@ -61,7 +62,7 @@ RELATIVE_URLS = True
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
-MENU = [("Encuentros", "/#encuentros"), ("Sobre nosotros", "/#nosotros")]
+MENU = [("Eventos", "/#eventos"), ("Sobre nosotros", "/#nosotros")]
 
 # The links a Person can have, shown as icons under the name, in this order: frontmatter key, label, and icon in
 # theme/templates/icons/ (the brand icons are the ones davidarcos.net uses). A link with no icon shows its label.

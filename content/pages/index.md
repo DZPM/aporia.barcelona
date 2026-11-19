@@ -15,4 +15,4 @@ Del gr. ἀπορία (aporía), ‘dificultad’, ‘perplejidad’, ‘falta d
 
 </div>
 
-Un encuentro regular en Barcelona.
+Próximo evento: enero de 2027.

@@ -2,8 +2,19 @@ Title: Aporia #01
 Slug: 01-primer-encuentro
 Date: 2026-11-17 18:45
 Hora: 18:45
-Lugar: Por confirmar
-Tema: Por confirmar
-Summary: El primer encuentro de Aporia Barcelona.
+Tema: La IA en el empleo
+Autor: Ubaldo
+LinkedIn: https://www.linkedin.com/posts/ubaldo-hervas_una-tarde-david-arcos-ruben-orta-y-un-servidor-share-7528725702041468928-D-kg/
+X: https://x.com/UbaldoHervas/status/2122965829549465916
+Summary: El primer evento de Aporia Barcelona: una mesa de ocho, dos horas, y la IA en el empleo.
 
-El primer encuentro.
+Una mesa de ocho, dos horas, y un tema: la IA en el empleo. No se graba y no decimos quién vino.
+
+Algunas de las ideas que salieron:
+
+- Sobrevaloramos el impacto de la IA a corto plazo y lo infravaloramos a largo plazo (la ley de Amara).
+- No hubo acuerdo sobre si la IA destruye o crea empleo, ni sobre si aplica la paradoja de Jevons.
+- Puede cambiar la relación de poder entre empleado y empleador, con más autónomos y más microempresas.
+- Mucho de lo que produce la IA es promedio, pero mucho trabajo profesional ya estaba por debajo del promedio.
+- No afecta solo a las tareas mecánicas: también a los perfiles de pensamiento lateral.
+
