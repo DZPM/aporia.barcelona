@@ -9,12 +9,9 @@ TIMEZONE = "Europe/Madrid"
 
 PATH = "content"
 ARTICLE_PATHS = ["eventos"]   # one Markdown file per event, from milestone 2
-PAGE_PATHS = ["pages"]
 
 THEME = "theme"
 
-# An Event is an article: content/eventos/NN-slug.md, served at /eventos/NN-slug/ (docs/adr/0002).
-# Its Date is the day of the meetup, not the day the page was written.
 # An Event is an article: content/eventos/NN-slug.md, served at /eventos/NN-slug/ (docs/adr/0002).
 # Its Date is the day of the meetup, not the day the page was written.
 ARTICLE_URL = "eventos/{slug}/"

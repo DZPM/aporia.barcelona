@@ -18,6 +18,8 @@ Everything that serves the site and is not in this repository, written down so i
 | `@` | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
 | `@` | AAAA | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 | `www` | CNAME | `dzpm.github.io.` |
+| `@` | TXT | `google-site-verification=…`: the Google Search Console domain property. Added after 2026-10-15. Keep it: Google checks it again from time to time |
+| `@` | TXT | `hibp-verify=…`: the domain verification of Have I Been Pwned, for breach alerts on the domain. Added after 2026-10-15 |
 | `_github-pages-challenge-dzpm` | TXT | the value GitHub shows when the domain is added to the account's verified domains (account Settings, Pages). Keep it: with the domain verified, no other GitHub account can claim `aporia.barcelona` or a subdomain for its own Pages site |
 
 Every record uses the TTL Namecheap calls Automatic. Nothing else. The parking records that Namecheap creates with a new domain are removed.
