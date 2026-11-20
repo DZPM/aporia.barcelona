@@ -39,6 +39,8 @@ header.evento h1 { margin: 0 0 0.6rem; font-size: 2rem; }
 header.evento .numero { color: var(--link); }   /* the number in the accent colour, the topic in the text colour */
 header.evento .cuando { margin: 0; color: var(--muted); }
 .cronica > p:first-child { font-size: 1.15rem; }   /* the opening line of the recap */
+.cronica img { display: block; max-width: 100%; height: auto; margin: 1.5rem 0; border-radius: 6px; }
+.cronica img.pixelada { image-rendering: pixelated; }   /* a pixelated photo keeps its hard blocks when the browser scales it */
 .cronica ul { padding-left: 1.2rem; }
 .cronica li { margin: 0.4rem 0; }
 .cronica li::marker { color: var(--link); }

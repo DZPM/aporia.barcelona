@@ -10,6 +10,8 @@ Summary: El primer evento de Aporia Barcelona: una mesa de ocho, dos horas, y la
 
 Una mesa de ocho, dos horas, y un tema: la IA en el empleo. No se graba y no decimos quién vino.
 
+![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/01-primer-encuentro.webp){: .pixelada width="1200" height="672" }
+
 Algunas de las ideas que salieron:
 
 - Sobrevaloramos el impacto de la IA a corto plazo y lo infravaloramos a largo plazo (la ley de Amara).
@@ -17,4 +19,3 @@ Algunas de las ideas que salieron:
 - Puede cambiar la relación de poder entre empleado y empleador, con más autónomos y más microempresas.
 - Mucho de lo que produce la IA es promedio, pero mucho trabajo profesional ya estaba por debajo del promedio.
 - No afecta solo a las tareas mecánicas: también a los perfiles de pensamiento lateral.
-
