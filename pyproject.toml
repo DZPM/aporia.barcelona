@@ -14,7 +14,7 @@ dev = [
     "ruff==0.17.0",   # make lint and CI; Dependabot leaves it alone (.github/dependabot.yml), update it by hand
 ]
 photo = [
-    "pillow==12.3.0",   # tools/pixelate_photo.py only; the site build does not need it, so CI does not install it
+    "pillow==13.0.0",   # tools/pixelate_photo.py only; the site build does not need it, so CI does not install it
 ]
 
 [tool.uv]
