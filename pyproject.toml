@@ -13,6 +13,9 @@ dependencies = [
 dev = [
     "ruff==0.17.0",   # make lint and CI; Dependabot leaves it alone (.github/dependabot.yml), update it by hand
 ]
+photo = [
+    "pillow==12.3.0",   # tools/pixelate_photo.py only; the site build does not need it, so CI does not install it
+]
 
 [tool.uv]
 package = false
@@ -20,7 +23,7 @@ required-version = ">=0.12"   # CI installs the newest uv that matches
 
 [tool.ruff]
 target-version = "py314"
-include = ["pelicanconf.py", "publishconf.py"]
+include = ["pelicanconf.py", "publishconf.py", "tools/*.py"]
 
 [tool.ruff.lint]
 select = ["F", "B"]   # pyflakes and bugbear: likely bugs, not style

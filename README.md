@@ -42,6 +42,37 @@ The question of the meetup, in one paragraph.
 
 `Slug` is the file name without `.md`. `Tema` goes in the title of the event page, after the number. `Enlaces` lists posts about the meetup, one per line as "who, network, URL" (the network is `linkedin`, `x`, `bluesky`, or `github`, the keys of `PERSONA_LINKS` in `pelicanconf.py`; the next lines start with four spaces). They show at the end of the page under "Enlaces", each with its icon and a text such as "Ubaldo en LinkedIn". Leave the field out when there is none. There is no place field: the place is private, and only the guests get it. `Date` is the day and time of the meetup. After the meetup, add what was said, without the names of attendees unless they agree. Look at it with `make serve` before you push: a push to `main` publishes it.
 
+## Publish a meetup photo
+
+The original photo of a meetup is never published, and never enters this repository: the repository is public, and git keeps every file it has ever had. Only a pixelated version is published, made with one treatment for the whole image (no region is treated apart).
+
+1. Keep the original outside the repository (David keeps them in `~/Pictures/Aporia Barcelona/`).
+2. Make the published version:
+
+    ```sh
+    make photo ORIGINAL="/path/to/original.jpg" OUT=content/images/eventos/NN-slug.webp
+    ```
+
+    It runs `tools/pixelate_photo.py`, with Pillow from the `photo` dependency group. The script refuses an original inside the repository, and writes no metadata.
+3. Look at the result at the width of the page (`make serve`). The rule: common traits may show (a bald head, glasses, curly hair), but nobody is recognisable at a glance.
+4. Put it in the event, after the first line of the recap, with the size the script prints:
+
+    ```markdown
+    ![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/NN-slug.webp){: .pixelada width="1200" height="672" }
+    ```
+
+    The `pixelada` class keeps the blocks hard when the browser scales the image.
+
+### Defaults
+
+| Setting | Default | What it does |
+|---|---|---|
+| `BLUR` (`--blur`) | `6` | Gaussian blur in px, on the whole photo scaled to 1600 px wide, before the pixelation |
+| `COLS` (`--cols`) | `100` | Blocks across: 16 px blocks at 1600 px, a grid of 100 x 56 for a 16:9 photo |
+| Output | 12 px per block | 1200 x 672 for a 16:9 photo, lossless WebP, about 17 KB: it can be shared as it is |
+
+These are the settings of Aporia #01 (2026-11-20). A later photo can use others (`make photo ... BLUR=10`, or `COLS=80` for larger blocks); say which in the commit message. More blur or fewer columns hide more.
+
 ## Add a person
 
 Create `content/personas/<slug>.md`:

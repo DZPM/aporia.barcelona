@@ -19,6 +19,8 @@ For coding agents. The [`README.md`](README.md) explains how the site works: whe
 
 - Add the name, photo, or contact of an attendee or a guest without their permission. The attendee list never enters the repository: it is public.
 - Commit a draft: an Event or a Person enters the repository when it is ready to publish.
+- Commit an original photo of a meetup, even for a moment: git keeps it in the history. Only the output of `make photo` enters the repository (README, "Publish a meetup photo").
+- Treat a part of a meetup photo apart from the rest (the faces, the background): one treatment for the whole image.
 - Rename the file or change the `Slug` of a published Event: its address is shared.
 - Add a dependency, a service, or a third-party script without a reason in the commit message. The stack stays small on purpose (ADR 0001).
 - Translate the content: the site is in Spanish. Code, comments, docs, ADRs, and commit messages are in English.

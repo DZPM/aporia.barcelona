@@ -1,7 +1,7 @@
 PELICAN = .venv/bin/pelican
 PORT ?= 8002   # not 8000 or 8001: the local server of davidarcos.net uses them
 
-.PHONY: setup build publish serve lint clean
+.PHONY: setup build publish serve lint clean photo
 
 setup:            ## create .venv with the toolchain uv.lock pins (needs uv)
 	uv sync --locked
@@ -21,3 +21,6 @@ lint:             ## check the Python with ruff, and the workflow files with act
 
 clean:
 	rm -rf output output-publish
+
+photo:            ## make the published version of a meetup photo: make photo ORIGINAL=~/Pictures/... OUT=content/images/eventos/NN-slug.webp [BLUR=6] [COLS=100]
+	uv run --group photo python tools/pixelate_photo.py "$(ORIGINAL)" "$(OUT)" $(if $(BLUR),--blur $(BLUR)) $(if $(COLS),--cols $(COLS))
