@@ -15,11 +15,13 @@
 </header>
 <div class="cronica">
 {{ article.content }}
-{% set links = [] %}{% for key, label, icon in PERSONA_LINKS if article[key] %}{% set _ = links.append((article[key], label, icon)) %}{% endfor %}
+{# Enlaces: one line per post about the event, "who, network, URL"; the network is a key of PERSONA_LINKS. Pelican gives a value of several lines as a list #}
+{% set labels = {} %}{% for key, label, icon in PERSONA_LINKS %}{% set _ = labels.update({key: (label, icon)}) %}{% endfor %}
+{% set links = [] %}{% set lines = article.enlaces if article.enlaces is not string else article.enlaces.splitlines() %}{% for line in (lines or []) if line.strip() %}{% set parts = line.split(",", 2) %}{% set net = parts[1].strip() %}{% set _ = links.append((parts[2].strip(), parts[0].strip() ~ " en " ~ labels[net][0], labels[net][1])) %}{% endfor %}
 {% if links %}<section class="enlaces">
 <h2>Enlaces</h2>
 <ul>
-{% for url, label, icon in links %}  <li><a class="icon-link" href="{{ url }}" rel="noopener"><span class="link-icon" aria-hidden="true">{% if icon %}{% include "icons/" ~ icon ~ ".svg" %}{% endif %}</span><span class="link-text">{% if article.autor %}{{ article.autor }} en {% endif %}{{ label }}</span></a></li>
+{% for url, label, icon in links %}  <li><a class="icon-link" href="{{ url }}" rel="noopener"><span class="link-icon" aria-hidden="true">{% if icon %}{% include "icons/" ~ icon ~ ".svg" %}{% endif %}</span><span class="link-text">{{ label }}</span></a></li>
 {% endfor %}</ul>
 </section>{% endif %}
 </div>
