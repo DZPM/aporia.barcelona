@@ -1,5 +1,5 @@
 PELICAN = .venv/bin/pelican
-PORT ?= 8002   # not 8000 or 8001: the local server of davidarcos.net uses them
+PORT ?= 8002   # not 8000 or 8001, which other local sites use; PORT=8003 make serve if 8002 is taken
 
 .PHONY: setup build publish serve lint clean photo
 

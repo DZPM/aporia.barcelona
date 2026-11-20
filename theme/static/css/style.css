@@ -84,7 +84,7 @@ footer .link-icon { color: inherit; }
 .persona { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .persona .foto { display: block; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem; box-shadow: 0 0 0 1px color-mix(in oklab, var(--fg) 15%, transparent); }   /* the round frame: it clips the photo when it comes closer */
 .persona .foto img { display: block; object-fit: cover; transition: transform 0.2s linear; }
-@media (prefers-reduced-motion: no-preference) {   /* the photo comes closer inside its frame, as on davidarcos.net; no motion when the reader asks for none */
+@media (prefers-reduced-motion: no-preference) {   /* the photo comes closer inside its frame; no motion when the reader asks for none */
   .persona:hover .foto img, .persona:focus-within .foto img { transform: scale(1.2); }
 }
 .persona h3 { margin: 0; font-size: 1.1rem; }

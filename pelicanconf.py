@@ -69,6 +69,6 @@ SITE_LINKS = [("https://x.com/aporiabarcelona", "@aporiabarcelona", "x"), ("http
 MENU = [("Eventos", "/#eventos"), ("Sobre nosotros", "/#nosotros")]
 
 # The links a Person can have, shown as icons under the name, in this order: frontmatter key, label, and icon in
-# theme/templates/icons/ (the brand icons are the ones davidarcos.net uses). A link with no icon shows its label.
+# theme/templates/icons/. A link with no icon shows its label.
 # Web is not here: it is the link of the name.
 PERSONA_LINKS = [("linkedin", "LinkedIn", "linkedin"), ("x", "X", "x"), ("bluesky", "Bluesky", None), ("github", "GitHub", "github")]
