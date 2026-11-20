@@ -11,7 +11,7 @@
 <article>
 <header class="evento">
   <h1>{% if article.tema %}<span class="numero">{{ article.title }}:</span> {{ article.tema }}{% else %}{{ article.title }}{% endif %}</h1>
-  <p class="cuando"><span aria-hidden="true">📅</span> {{ fecha(article.date) }}{% if article.hora %}, {{ article.hora }}{% endif %}</p>
+  <p class="cuando"><span aria-hidden="true">📅</span> {% if article.fecha %}{{ article.fecha }}{% else %}{{ fecha(article.date) }}{% if article.hora %}, {{ article.hora }}{% endif %}{% endif %}</p>
 </header>
 <div class="cronica">
 {{ article.content }}

@@ -33,6 +33,7 @@ Slug: NN-slug
 Date: 2026-11-26 19:00
 Hora: 19:00
 Tema: the topic
+Foto: images/eventos/NN-slug.webp
 Enlaces: Ubaldo, linkedin, https://www.linkedin.com/posts/...
     Ubaldo, x, https://x.com/...
 Summary: One sentence; search engines show it.
@@ -62,6 +63,7 @@ The original photo of a meetup is never published, and never enters this reposit
     ```
 
     The `pixelada` class keeps the blocks hard when the browser scales the image.
+5. Set `Foto: images/eventos/NN-slug.webp` in the event: the home page shows it in the event's card, next to the title and the date. An event with no photo gets an empty frame.
 
 ### Defaults
 

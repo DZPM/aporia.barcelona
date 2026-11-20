@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_fecha.html" import fecha with context %}
+{% from "_fecha.html" import fecha, fecha_corta with context %}
 {% from "_persona.html" import persona with context %}
 {% block brand %}<h1 class="site">{{ SITENAME }}</h1>{% endblock %}   {# the home page: the name in the header is its title, not a link to itself #}
 {% block content %}
@@ -8,11 +8,17 @@
 <section id="eventos">
 <h2>Eventos</h2>
 {% if articles %}
-<ul class="eventos">
+<ol class="eventos">
 {% for a in articles %}
-  <li>{{ fecha(a.date) }}: <a href="{{ SITEURL }}/{{ a.url }}">{{ a.title }}{% if a.tema %}: {{ a.tema }}{% endif %}</a></li>
+  <li class="card">
+    <div class="card-cover{% if not a.foto %} is-empty{% endif %}" aria-hidden="true">{% if a.foto %}<img src="{{ SITEURL }}/{{ a.foto }}" alt="" width="1200" height="672" loading="lazy">{% endif %}</div>
+    <div class="card-body">
+      <h3 class="card-title"><a href="{{ SITEURL }}/{{ a.url }}">{% if a.tema %}<span class="numero">{{ a.title }}:</span> {{ a.tema }}{% else %}{{ a.title }}{% endif %}</a></h3>
+      <p class="card-date">{{ fecha_corta(a) }}</p>
+    </div>
+  </li>
 {% endfor %}
-</ul>
+</ol>
 {% else %}
 <p>El primer evento, pronto.</p>
 {% endif %}

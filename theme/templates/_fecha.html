@@ -1,1 +1,3 @@
 {% macro fecha(d) %}<time datetime="{{ d.strftime('%Y-%m-%d') }}">{{ DIAS[d.weekday()] }}, {{ d.day }} de {{ MESES[d.month - 1] }} de {{ d.year }}</time>{% endmacro %}
+{# the short form, for the cards on the home page: "17 de noviembre de 2026"; an event whose day is not fixed shows its Fecha field instead ("enero de 2027") #}
+{% macro fecha_corta(a) %}{% if a.fecha %}{{ a.fecha }}{% else %}<time datetime="{{ a.date.strftime('%Y-%m-%d') }}">{{ a.date.day }} de {{ MESES[a.date.month - 1] }} de {{ a.date.year }}</time>{% endif %}{% endmacro %}
