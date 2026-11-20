@@ -19,7 +19,6 @@
 <body>
 <header>
   <div class="brand"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{% block brand %}<a class="site" href="{{ SITEURL }}/">{{ SITENAME }}</a>{% endblock %}</div>
-  <nav>{% for name, link in MENU %}<a href="{{ SITEURL }}{{ link }}">{{ name }}</a>{% endfor %}</nav>
   {% if SITESUBTITLE %}<blockquote class="lema"><p>«{{ SITESUBTITLE }}»</p></blockquote>{% endif %}
 </header>
 <main>

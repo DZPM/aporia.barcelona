@@ -71,7 +71,6 @@ OG_IMAGE_ALT = "Aporia Barcelona: la definición de aporía, del griego, dificul
 
 SITE_LINKS = [("https://x.com/aporiabarcelona", "@aporiabarcelona", "x"), ("https://luma.com/aporia.barcelona", "aporia.barcelona", "luma")]   # the Luma calendar lists no private event and no guest
 
-MENU = [("Eventos", "/#eventos"), ("Sobre nosotros", "/#nosotros")]
 
 # The links a Person can have, shown as icons under the name, in this order: frontmatter key, label, and icon in
 # theme/templates/icons/. A link with no icon shows its label.
