@@ -33,7 +33,7 @@ Slug: NN-slug
 Date: 2026-11-26 19:00
 Hora: 19:00
 Tema: the topic
-Foto: images/eventos/NN-slug.webp
+Foto: images/eventos/NN-slug.png
 Enlaces: Ubaldo, linkedin, https://www.linkedin.com/posts/...
     Ubaldo, x, https://x.com/...
 Summary: One sentence; search engines show it.
@@ -51,19 +51,19 @@ The original photo of a meetup is never published, and never enters this reposit
 2. Make the published version:
 
     ```sh
-    make photo ORIGINAL="/path/to/original.jpg" OUT=content/images/eventos/NN-slug.webp
+    make photo ORIGINAL="/path/to/original.jpg" OUT=content/images/eventos/NN-slug.png
     ```
 
-    It runs `tools/pixelate_photo.py`, with Pillow from the `photo` dependency group. The script refuses an original inside the repository, and writes no metadata.
+    It runs `tools/pixelate_photo.py`, with Pillow from the `photo` dependency group. Use PNG: the photo is also the event's link preview, and WhatsApp does not read WebP there. The script refuses an original inside the repository, and writes no metadata.
 3. Look at the result at the width of the page (`make serve`). The rule: common traits may show (a bald head, glasses, curly hair), but nobody is recognisable at a glance.
 4. Put it in the event, after the first line of the recap, with the size the script prints:
 
     ```markdown
-    ![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/NN-slug.webp){: .pixelada width="1200" height="672" }
+    ![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/NN-slug.png){: .pixelada width="1200" height="672" }
     ```
 
     The `pixelada` class keeps the blocks hard when the browser scales the image.
-5. Set `Foto: images/eventos/NN-slug.webp` in the event: the home page shows it in the event's card, next to the title and the date, and the event page shares it as its link preview (instead of the site's card, `og.png`). An event with no photo gets an empty frame.
+5. Set `Foto: images/eventos/NN-slug.png` in the event: the home page shows it in the event's card, next to the title and the date, and the event page shares it as its link preview (instead of the site's card, `og.png`). An event with no photo gets an empty frame.
 
 ### Defaults
 
@@ -71,7 +71,7 @@ The original photo of a meetup is never published, and never enters this reposit
 |---|---|---|
 | `BLUR` (`--blur`) | `6` | Gaussian blur in px, on the whole photo scaled to 1600 px wide, before the pixelation |
 | `COLS` (`--cols`) | `100` | Blocks across: 16 px blocks at 1600 px, a grid of 100 x 56 for a 16:9 photo |
-| Output | 12 px per block | 1200 x 672 for a 16:9 photo, lossless WebP, about 17 KB: it can be shared as it is |
+| Output | 12 px per block | 1200 x 672 for a 16:9 photo, PNG, about 25 KB: it can be shared as it is |
 
 These are the settings of Aporia #01 (2026-11-20). A later photo can use others (`make photo ... BLUR=10`, or `COLS=80` for larger blocks); say which in the commit message. More blur or fewer columns hide more.
 

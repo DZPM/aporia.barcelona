@@ -3,7 +3,7 @@ Slug: 01-primer-encuentro
 Date: 2026-11-17 18:45
 Hora: 18:45
 Tema: La IA en el empleo
-Foto: images/eventos/01-primer-encuentro.webp
+Foto: images/eventos/01-primer-encuentro.png
 Enlaces: Ubaldo, linkedin, https://www.linkedin.com/posts/ubaldo-hervas_una-tarde-david-arcos-ruben-orta-y-un-servidor-share-7528725702041468928-D-kg/
     Ubaldo, x, https://x.com/UbaldoHervas/status/2122965829549465916
     Rubén, linkedin, https://www.linkedin.com/posts/rubenorta_el-pasado-martes-sal%C3%AD-de-la-primera-edici%C3%B3n-share-7529255265804681216-IJDS/
@@ -11,7 +11,7 @@ Summary: El primer evento de Aporia Barcelona: una mesa de ocho, dos horas, y la
 
 Una mesa de ocho, dos horas, y un tema: la IA en el empleo. No se graba y no decimos quién vino.
 
-![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/01-primer-encuentro.webp){: .pixelada width="1200" height="672" }
+![Ocho personas alrededor de una mesa con bebidas, en una foto pixelada]({static}/images/eventos/01-primer-encuentro.png){: .pixelada width="1200" height="672" }
 
 Algunas de las ideas que salieron:
 

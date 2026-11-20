@@ -10,7 +10,7 @@ The original photo must stay outside the repository: the script refuses an input
 metadata to the output (no EXIF, no GPS, no camera data).
 
 Usage (make photo does the same):
-    uv run --group photo python tools/pixelate_photo.py ORIGINAL content/images/eventos/NN-slug.webp
+    uv run --group photo python tools/pixelate_photo.py ORIGINAL content/images/eventos/NN-slug.png
 
 The defaults are the settings of Aporia #01 (README, "Publish a meetup photo"). Another value is fine for a later photo,
 with --blur and --cols; say which in the commit message.
@@ -45,7 +45,7 @@ def pixelate(src, blur, cols):
 def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("original", help="the original photo, outside the repository")
-    parser.add_argument("output", help="the published file, for example content/images/eventos/02-slug.webp")
+    parser.add_argument("output", help="the published file, for example content/images/eventos/02-slug.png (PNG, so link previews can read it)")
     parser.add_argument("--blur", type=float, default=DEFAULT_BLUR, help=f"Gaussian blur in px at {WORK_WIDTH} px wide (default {DEFAULT_BLUR})")
     parser.add_argument("--cols", type=int, default=DEFAULT_COLS, help=f"blocks across (default {DEFAULT_COLS})")
     args = parser.parse_args()
@@ -53,7 +53,10 @@ def main():
     if os.path.realpath(args.original).startswith(REPO + os.sep):
         sys.exit("The original photo is inside the repository. Move it out first: the repository is public.")
     out = pixelate(args.original, args.blur, args.cols)
-    out.save(args.output, "WEBP", lossless=True, method=6)
+    if args.output.lower().endswith(".webp"):
+        out.save(args.output, "WEBP", lossless=True, method=6)
+    else:
+        out.save(args.output, optimize=True)   # PNG: what every link preview reads (WhatsApp does not read WebP)
     print(f"{args.output}: {out.width} x {out.height}, {os.path.getsize(args.output)} bytes, blur {args.blur}, {args.cols} columns. "
           f'In the Markdown: {{: .pixelada width="{out.width}" height="{out.height}" }}')
 
