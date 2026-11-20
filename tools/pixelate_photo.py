@@ -19,7 +19,7 @@ import argparse
 import os
 import sys
 
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageOps
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The defaults: the settings chosen for Aporia #01 (2026-11-20). Change a photo's settings with --blur and --cols.
@@ -32,7 +32,7 @@ SHARE_BLOCK = 12    # px per block in the output file: 1200 px wide for 100 colu
 def pixelate(src, blur, cols):
     block = WORK_WIDTH // cols
     with Image.open(src) as im:
-        im = im.convert("RGB")
+        im = ImageOps.exif_transpose(im).convert("RGB")   # a phone photo stores its rotation in EXIF; apply it, or the output lies on its side
         height = round(WORK_WIDTH * im.height / im.width)
         im = im.resize((WORK_WIDTH, height), Image.LANCZOS)
     if blur:

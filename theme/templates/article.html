@@ -4,20 +4,20 @@
 {% block description %}{% if article.summary %}<meta name="description" content="{{ article.summary|striptags|trim }}">{% endif %}{% endblock %}
 {% block share %}
   <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
-  {% set share_title = article.title ~ (": " ~ article.tema if article.tema else "") %}{% set share_description = article.summary or SITESUBTITLE %}{% set share_url = SITEURL ~ "/" ~ article.url %}{% set share_type = "article" %}{% set share_image = article.foto or "" %}{% set share_image_alt = "Foto pixelada del " ~ article.title ~ ": personas alrededor de una mesa con bebidas" %}
+  {% set share_title = article.title ~ (": " ~ article.tema if article.tema else "") %}{% set share_description = article.summary or SITESUBTITLE %}{% set share_url = SITEURL ~ "/" ~ article.url %}{% set share_type = "article" %}{% set share_image = article.foto or "" %}{% set share_image_alt = article.foto_alt or "" %}
   {% include "_share.html" %}
 {% endblock %}
 {% block content %}
 <article>
 <header class="evento">
   <h1>{% if article.tema %}<span class="numero">{{ article.title }}:</span> {{ article.tema }}{% else %}{{ article.title }}{% endif %}</h1>
-  <p class="cuando"><span aria-hidden="true">📅</span> {% if article.fecha %}{{ article.fecha }}{% else %}{{ fecha(article.date) }}{% if article.hora %}, {{ article.hora }}{% endif %}{% endif %}</p>
+  <p class="cuando">{% if article.fecha %}{{ article.fecha }}{% else %}{{ fecha(article.date) }}, {{ article.date.strftime("%H:%M") }}{% endif %}</p>
 </header>
 <div class="cronica">
 {{ article.content }}
 {# Enlaces: one line per post about the event, "who, network, URL"; the network is a key of PERSONA_LINKS. Pelican gives a value of several lines as a list #}
 {% set labels = {} %}{% for key, label, icon in PERSONA_LINKS %}{% set _ = labels.update({key: (label, icon)}) %}{% endfor %}
-{% set links = [] %}{% set lines = article.enlaces if article.enlaces is not string else article.enlaces.splitlines() %}{% for line in (lines or []) if line.strip() %}{% set parts = line.split(",", 2) %}{% set net = parts[1].strip() %}{% set _ = links.append((parts[2].strip(), parts[0].strip() ~ " en " ~ labels[net][0], labels[net][1])) %}{% endfor %}
+{% set links = [] %}{% set lines = article.enlaces if article.enlaces is not string else article.enlaces.splitlines() %}{% for line in (lines or []) if line.strip() %}{% set parts = line.split(",", 2) %}{% set net = parts[1].strip().lower() %}{% set _ = links.append((parts[2].strip(), parts[0].strip() ~ " en " ~ labels[net][0], labels[net][1])) %}{% endfor %}
 {% if links %}<section class="enlaces">
 <h2>Enlaces</h2>
 <ul>

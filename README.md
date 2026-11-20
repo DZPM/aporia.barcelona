@@ -31,9 +31,9 @@ Create `content/eventos/NN-slug.md`, with the next number and a short slug:
 Title: Aporia #NN: the title of the meetup
 Slug: NN-slug
 Date: 2026-11-26 19:00
-Hora: 19:00
 Tema: the topic
 Foto: images/eventos/NN-slug.png
+Foto_alt: Ocho personas alrededor de una mesa con bebidas, en una foto pixelada
 Enlaces: Ubaldo, linkedin, https://www.linkedin.com/posts/...
     Ubaldo, x, https://x.com/...
 Summary: One sentence; search engines show it.
@@ -41,7 +41,7 @@ Summary: One sentence; search engines show it.
 The question of the meetup, in one paragraph.
 ```
 
-`Slug` is the file name without `.md`. An event that is announced but not fixed yet (no day, no topic) can be a card on the home page with no page of its own: set `Fecha: (month) de (year)` instead of a real day, `Tema: TBC`, `Foto: images/eventos/tbc.webp`, and empty `Save_as:` and `URL:` lines. When it is fixed, remove those lines; the page appears at its slug. `Tema` goes in the title of the event page, after the number. `Enlaces` lists posts about the meetup, one per line as "who, network, URL" (the network is `linkedin`, `x`, `bluesky`, or `github`, the keys of `PERSONA_LINKS` in `pelicanconf.py`; the next lines start with four spaces). They show at the end of the page under "Enlaces", each with its icon and a text such as "Ubaldo en LinkedIn". Leave the field out when there is none. There is no place field: the place is private, and only the guests get it. `Date` is the day and time of the meetup. After the meetup, add what was said, without the names of attendees unless they agree. Look at it with `make serve` before you push: a push to `main` publishes it.
+`Slug` is the file name without `.md`. An event that is announced but not fixed yet (no day, no topic) can be a card on the home page with no page of its own: set `Fecha: (month) de (year)` instead of a real day, `Tema: TBC`, no `Foto`, and empty `Save_as:` and `URL:` lines. When it is fixed, remove those lines; the page appears at its slug. `Tema` goes in the title of the event page, after the number. `Enlaces` lists posts about the meetup, one per line as "who, network, URL" (the network is `linkedin`, `x`, `bluesky`, or `github`, the keys of `PERSONA_LINKS` in `pelicanconf.py`; the next lines start with four spaces). They show at the end of the page under "Enlaces", each with its icon and a text such as "Ubaldo en LinkedIn". Leave the field out when there is none. There is no place field: the place is private, and only the guests get it. `Date` is the day and time of the meetup; the page shows both. `Foto` is only for the real, pixelated photo of a meetup that took place (see below): a card with no `Foto` shows a question mark, and a page with no `Foto` shares the site's card. A network in `Enlaces` may be in any case; an unknown one stops the build. After the meetup, add what was said, without the names of attendees unless they agree. Look at it with `make serve` before you push: a push to `main` publishes it.
 
 ## Publish a meetup photo
 
@@ -63,7 +63,7 @@ The original photo of a meetup is never published, and never enters this reposit
     ```
 
     The `pixelada` class keeps the blocks hard when the browser scales the image.
-5. Set `Foto: images/eventos/NN-slug.png` in the event: the home page shows it in the event's card, next to the title and the date, and the event page shares it as its link preview (instead of the site's card, `og.png`). An event with no photo gets an empty frame.
+5. Set `Foto: images/eventos/NN-slug.png` and `Foto_alt` (what the photo shows, for screen readers and link previews) in the event: the home page shows it in the event's card, next to the title and the date, and the event page shares it as its link preview (instead of the site's card, `og.png`). An event with no photo gets an empty frame.
 
 ### Defaults
 
