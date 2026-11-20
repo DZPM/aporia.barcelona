@@ -37,7 +37,8 @@ a { color: var(--link); }
 .is-scrolled header .site { font-size: 1.2rem; }
 .is-scrolled .lema { display: none; }
 @media (prefers-reduced-motion: reduce) { .site-header-inner, .brand .logo, header .site { transition: none; } }
-.brand { display: flex; align-items: center; gap: 0.75rem; }
+.brand { display: flex; align-items: center; }
+header .site { display: inline-flex; align-items: center; gap: 0.75rem; }   /* the logo and the name are one link (one title on the home page) */
 .brand .logo { display: block; }
 header .site { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-decoration: none; color: var(--fg); }   /* the same on every page: a link on most, the page's h1 on the home page */
 a.site:hover, a.site:focus-visible { color: var(--link); }   /* the name links to the home page on every page but the home itself */

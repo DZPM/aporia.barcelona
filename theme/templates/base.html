@@ -21,7 +21,7 @@
 <div class="scroll-sentinel" aria-hidden="true"></div>
 <div class="header-space" aria-hidden="true"></div>
 <header class="site-header"><div class="site-header-inner">
-  <div class="brand"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{% block brand %}<a class="site" href="{{ SITEURL }}/">{{ SITENAME }}</a>{% endblock %}</div>
+  <div class="brand">{% block brand %}<a class="site" href="{{ SITEURL }}/"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{{ SITENAME }}</a>{% endblock %}</div>
   {% if SITESUBTITLE %}<blockquote class="lema"><p>«{{ SITESUBTITLE }}»</p></blockquote>{% endif %}
 </div></header>
 <main>

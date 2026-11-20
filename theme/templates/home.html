@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_fecha.html" import fecha_corta with context %}
 {% from "_persona.html" import persona with context %}
-{% block brand %}<h1 class="site">{{ SITENAME }}</h1>{% endblock %}   {# the home page: the name in the header is its title, not a link to itself #}
+{% block brand %}<h1 class="site"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{{ SITENAME }}</h1>{% endblock %}   {# the home page: the name in the header is its title, not a link to itself #}
 {% block content %}
 {{ page.content }}
 
