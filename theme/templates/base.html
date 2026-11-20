@@ -15,12 +15,15 @@
   <link rel="icon" href="{{ SITEURL }}/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="{{ SITEURL }}/apple-touch-icon.png">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+  <script src="{{ SITEURL }}/theme/js/header.js" defer></script>
 </head>
 <body>
-<header>
+<div class="scroll-sentinel" aria-hidden="true"></div>
+<div class="header-space" aria-hidden="true"></div>
+<header class="site-header"><div class="site-header-inner">
   <div class="brand"><img class="logo" src="{{ SITEURL }}/favicon.svg" alt="" width="44" height="44">{% block brand %}<a class="site" href="{{ SITEURL }}/">{{ SITENAME }}</a>{% endblock %}</div>
   {% if SITESUBTITLE %}<blockquote class="lema"><p>«{{ SITESUBTITLE }}»</p></blockquote>{% endif %}
-</header>
+</div></header>
 <main>
 {% block content %}{% endblock %}
 </main>

@@ -17,13 +17,26 @@ html { scrollbar-gutter: stable; }   /* the header does not move between a page 
 body {
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 0 1rem 1.5rem;
   font: 1.0625rem/1.6 system-ui, sans-serif;
   color: var(--fg);
   background: var(--bg);
 }
 a { color: var(--link); }
-header { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.site-header-inner { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; justify-content: space-between; padding: 1.5rem 0 2rem; }
+/* the header follows the reader: header.js measures it (--header-h), the spacer keeps its place, and once the page has
+   scrolled past the sentinel (html.is-scrolled) it is fixed at the top and folds: smaller logo and name, no tagline */
+.scroll-sentinel { position: absolute; top: 5rem; width: 1px; height: 1px; }
+.js-header .header-space { height: var(--header-h, 9rem); }
+.js-header .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: color-mix(in oklab, var(--bg) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.js-header .site-header-inner { width: min(100% - 2rem, 40rem); margin-inline: auto; }
+.site-header-inner, .brand .logo, header .site { transition: padding 0.25s ease, width 0.25s ease, height 0.25s ease, font-size 0.25s ease; }
+.is-scrolled .site-header { border-bottom: 1px solid color-mix(in oklab, var(--fg) 12%, transparent); }
+.is-scrolled .site-header-inner { padding: 0.5rem 0; }
+.is-scrolled .brand .logo { width: 2rem; height: 2rem; }
+.is-scrolled header .site { font-size: 1.2rem; }
+.is-scrolled .lema { display: none; }
+@media (prefers-reduced-motion: reduce) { .site-header-inner, .brand .logo, header .site { transition: none; } }
 .brand { display: flex; align-items: center; gap: 0.75rem; }
 .brand .logo { display: block; }
 header .site { font-size: 2rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-decoration: none; color: var(--fg); }   /* the same on every page: a link on most, the page's h1 on the home page */
