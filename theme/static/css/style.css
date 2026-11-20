@@ -31,7 +31,7 @@ a.site:hover, a.site:focus-visible { color: var(--link); }   /* the name links t
 header .lema { flex-basis: 100%; margin: 0.25rem 0 0; font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--muted); }   /* the site's description, as a quote under the name, on every page */
 header .lema p { margin: 0; }
 h1 { line-height: 1.2; }
-main h1 { font-size: 1.6rem; }   /* header.evento h1 is larger: the topic is the event's title */   /* a page's title stays under the name in the header */
+main h1 { font-size: 1.6rem; }   /* a page's title stays under the name in the header; the event title (header.evento h1) is larger */
 .eventos { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 1rem; }
 main section + section { margin-top: 2.5rem; }   /* the same space before every heading of the home page */
 /* an event on the home page: its photo, then the title and the date; the whole card is the link */

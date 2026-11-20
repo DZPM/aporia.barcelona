@@ -8,7 +8,7 @@ DEFAULT_LANG = "es"
 TIMEZONE = "Europe/Madrid"
 
 PATH = "content"
-ARTICLE_PATHS = ["eventos"]   # one Markdown file per event, from milestone 2
+ARTICLE_PATHS = ["eventos"]   # one Markdown file per event
 
 THEME = "theme"
 
@@ -60,7 +60,6 @@ RELATIVE_URLS = True
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
-# The site's own accounts, shown in the footer of every page: URL, text, and icon in theme/templates/icons/
 # An event photo comes from make photo: 1200 px wide, 672 px tall for a 16:9 original (og:image:width and height)
 EVENT_PHOTO_SIZE = (1200, 672)
 # The image of the card of an event with no Foto (an event announced, not held): a question mark in pixel blocks
@@ -69,6 +68,7 @@ EVENT_NO_PHOTO = "images/eventos/tbc.png"
 X_HANDLE = "@aporiabarcelona"   # twitter:site on every page
 OG_IMAGE_ALT = "Aporia Barcelona: la definición de aporía, del griego, dificultad, perplejidad, falta de salida"
 
+# The site's own accounts, shown in the footer of every page: URL, text, and icon in theme/templates/icons/
 SITE_LINKS = [("https://x.com/aporiabarcelona", "@aporiabarcelona", "x"), ("https://luma.com/aporia.barcelona", "aporia.barcelona", "luma")]   # the Luma calendar lists no private event and no guest
 
 

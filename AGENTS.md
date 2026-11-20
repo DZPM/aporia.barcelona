@@ -7,7 +7,7 @@ For coding agents. The [`README.md`](README.md) explains how the site works: whe
 
 ## Words
 
-- **Event**: one meetup, and its page: a Markdown file in `content/eventos/` (docs/adr/0002). Its `Date` is the day of the meetup.
+- **Event**: one meetup, and its page: a Markdown file in `content/eventos/` (docs/adr/0002). Its `Date` is the day and time of the meetup. An Event announced but not fixed yet is a card on the home page with no page (empty `Save_as` and `URL`). `Foto` is only the real, pixelated photo of a meetup that took place.
 - **Person**: an organiser or a guest: a Markdown file in `content/personas/`, shown inside the home page and nowhere else (docs/adr/0003).
 
 ## Before you call a change done

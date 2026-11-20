@@ -7,7 +7,7 @@ setup:            ## create .venv with the toolchain uv.lock pins (needs uv)
 	uv sync --locked
 
 build:            ## build the site into output/ with local settings
-	$(PELICAN) content -o output -s pelicanconf.py --fatal errors
+	$(PELICAN) content -o output -s pelicanconf.py --fatal errors --delete-output-directory   # no stale file served locally that production would not have
 
 publish:          ## build with production settings into output-publish/ (what the workflow runs; fails on warnings), so the local server in output/ keeps working
 	$(PELICAN) content -o output-publish -s publishconf.py --fatal warnings
