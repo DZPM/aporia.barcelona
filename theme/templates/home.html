@@ -10,10 +10,11 @@
 {% if articles %}
 <ol class="eventos">
 {% for a in articles %}
-  <li class="card">
+  <li class="card{% if not a.url %} sin-pagina{% endif %}">
     <div class="card-cover{% if not a.foto %} is-empty{% endif %}" aria-hidden="true">{% if a.foto %}<img src="{{ SITEURL }}/{{ a.foto }}" alt="" width="1200" height="672" loading="lazy">{% endif %}</div>
     <div class="card-body">
-      <h3 class="card-title"><a href="{{ SITEURL }}/{{ a.url }}">{% if a.tema %}<span class="numero">{{ a.title }}:</span> {{ a.tema }}{% else %}{{ a.title }}{% endif %}</a></h3>
+      {% set titulo %}{% if a.tema %}<span class="numero">{{ a.title }}:</span> {{ a.tema }}{% else %}{{ a.title }}{% endif %}{% endset %}
+      <h3 class="card-title">{% if a.url %}<a href="{{ SITEURL }}/{{ a.url }}">{{ titulo }}</a>{% else %}{{ titulo }}{% endif %}</h3>
       <p class="card-date">{{ fecha_corta(a) }}</p>
     </div>
   </li>

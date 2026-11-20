@@ -14,5 +14,3 @@ Del gr. ἀπορία (aporía), ‘dificultad’, ‘perplejidad’, ‘falta d
 2. Estado de incertidumbre o perplejidad intelectual al reconocer que las respuestas disponibles resultan insuficientes o contradictorias.
 
 </div>
-
-Próximo evento: enero de 2027.
