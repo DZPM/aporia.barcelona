@@ -63,7 +63,7 @@ The original photo of a meetup is never published, and never enters this reposit
     ```
 
     The `pixelada` class keeps the blocks hard when the browser scales the image.
-5. Set `Foto: images/eventos/NN-slug.webp` in the event: the home page shows it in the event's card, next to the title and the date. An event with no photo gets an empty frame.
+5. Set `Foto: images/eventos/NN-slug.webp` in the event: the home page shows it in the event's card, next to the title and the date, and the event page shares it as its link preview (instead of the site's card, `og.png`). An event with no photo gets an empty frame.
 
 ### Defaults
 

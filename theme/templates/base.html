@@ -8,7 +8,7 @@
   {% block share %}
   <link rel="canonical" href="{{ SITEURL }}/">
   <meta name="description" content="{{ SITESUBTITLE }}">
-  {% set share_title = SITENAME %}{% set share_description = SITESUBTITLE %}{% set share_url = SITEURL ~ "/" %}{% set share_type = "website" %}
+  {% set share_title = SITENAME %}{% set share_description = SITESUBTITLE %}{% set share_url = SITEURL ~ "/" %}{% set share_type = "website" %}{% set share_image = "" %}
   {% include "_share.html" %}
   {% endblock %}
   <link rel="icon" href="{{ SITEURL }}/favicon.svg" type="image/svg+xml">
